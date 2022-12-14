@@ -1,7 +1,7 @@
-const cheerio = require("cheerio");
-const fs = require("fs/promises");
-const path = require("path");
-const core = require("@actions/core");
+import cheerio from "cheerio";
+import fs from "fs/promises";
+import path from "path";
+import core from "@actions/core";
 
 const exists = async (path) => {
   try {
