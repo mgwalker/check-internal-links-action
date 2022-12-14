@@ -12,16 +12,6 @@ const exists = async (path) => {
   }
 };
 
-const SITE_ROOT = core.getInput("path");
-
-if (!SITE_ROOT) {
-  core.error("Missing argument: path to scan for links");
-  process.exit(3);
-} else if (!(await exists(SITE_ROOT))) {
-  core.error(`Invalid argument: ${SITE_ROOT} is not found`);
-  process.exit(2);
-}
-
 const getFiles = async (root) => {
   const fsChildren = await fs.readdir(root);
 
@@ -53,6 +43,16 @@ const getDom = async (file) => {
 };
 
 const run = async () => {
+  const SITE_ROOT = core.getInput("path");
+
+  if (!SITE_ROOT) {
+    core.error("Missing argument: path to scan for links");
+    process.exit(3);
+  } else if (!(await exists(SITE_ROOT))) {
+    core.error(`Invalid argument: ${SITE_ROOT} is not found`);
+    process.exit(2);
+  }
+
   const files = await getFiles(SITE_ROOT);
 
   const pagesMap = new Map();

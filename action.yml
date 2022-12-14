@@ -11,5 +11,5 @@ inputs:
       scanned recursively.
     required: true
 runs:
-  using: 'node18'
+  using: 'node16'
   main: 'check-links.js'
