@@ -156,7 +156,7 @@ const run = async () => {
     }
   }
 
-  if (errorMessages.length) {
+  if (errorMessages.length > 2) {
     await write(errorMessages.join("\n"));
     process.exit(1);
   } else {
