@@ -146,14 +146,21 @@ const run = async () => {
   //   ""
   // );
 
+  let hasErrors = false;
+
   for (const [page, pageErrors] of errors) {
     if (pageErrors.length) {
       // errorMessages.push(`* ${page}  `);
       for (const error of pageErrors) {
         // errorMessages.push(`   ${error}`);
         core.error(`in ${page}`, { title: error });
+        hasErrors = true;
       }
     }
+  }
+
+  if (hasErrors) {
+    process.exit(1);
   }
 
   // if (errorMessages.length > 2) {
