@@ -1,0 +1,10 @@
+name: Check internal links
+description: |
+  Scans a collection of HTML files looking for links to other locations within
+  the same collection (e.g., relative links). For each link, it verifies that
+  the destination page exists, and if the link includes a hashtag, it also
+  verifies that the target exists on the destination page.
+inputs:
+runs:
+  using: 'node18'
+  main: 'check-links.js'
