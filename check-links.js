@@ -151,7 +151,7 @@ const run = async () => {
       errorMessages.push(`* ${page}  `);
       for (const error of pageErrors) {
         errorMessages.push(`   ${error}`);
-        core.error(error, { title: error });
+        core.error(`in ${page}`, { title: error });
       }
     }
   }
