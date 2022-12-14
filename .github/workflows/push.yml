@@ -1,0 +1,12 @@
+name: hi
+
+on: [push]
+
+jobs:
+  bob:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout
+      - uses: mgwalker/check-internal-links-action
+        with:
+          - path: pages

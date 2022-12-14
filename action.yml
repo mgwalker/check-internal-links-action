@@ -5,6 +5,11 @@ description: |
   the destination page exists, and if the link includes a hashtag, it also
   verifies that the target exists on the destination page.
 inputs:
+  path:
+    description: |
+      Path to the directory containing your HTML files. This directory will be
+      scanned recursively.
+    required: true
 runs:
   using: 'node18'
   main: 'check-links.js'
