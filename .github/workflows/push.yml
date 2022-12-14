@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: mgwalker/check-internal-links-action@1ea041dffa28b3b4895e31326b1950b60baa0e04
+      - uses: mgwalker/check-internal-links-action@1afafeed20952f72838716e30b587ab0f9847ba5
         with:
           path: pages
