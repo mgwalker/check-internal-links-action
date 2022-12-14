@@ -131,39 +131,39 @@ const run = async () => {
     }
   }
 
-  const write = async (str) => {
-    if (process.env.GITHUB_STEP_SUMMARY) {
-      await fs.writeFile(process.env.GITHUB_STEP_SUMMARY, str, {
-        encoding: "utf-8",
-      });
-    }
-    console.log(str);
-  };
+  // const write = async (str) => {
+  //   if (process.env.GITHUB_STEP_SUMMARY) {
+  //     await fs.writeFile(process.env.GITHUB_STEP_SUMMARY, str, {
+  //       encoding: "utf-8",
+  //     });
+  //   }
+  //   console.log(str);
+  // };
 
-  const errorMessages = [];
-  errorMessages.push(
-    `## 🛑 Checked ${pagesMap.size} pages and found these invalid or broken internal links:`,
-    ""
-  );
+  // const errorMessages = [];
+  // errorMessages.push(
+  //   `## 🛑 Checked ${pagesMap.size} pages and found these invalid or broken internal links:`,
+  //   ""
+  // );
 
   for (const [page, pageErrors] of errors) {
     if (pageErrors.length) {
-      errorMessages.push(`* ${page}  `);
+      // errorMessages.push(`* ${page}  `);
       for (const error of pageErrors) {
-        errorMessages.push(`   ${error}`);
+        // errorMessages.push(`   ${error}`);
         core.error(`in ${page}`, { title: error });
       }
     }
   }
 
-  if (errorMessages.length > 2) {
-    await write(errorMessages.join("\n"));
-    process.exit(1);
-  } else {
-    await write(
-      `✅ Checked ${pagesMap.size} pages and found no invalid or broken internal links`
-    );
-  }
+  // if (errorMessages.length > 2) {
+  //   await write(errorMessages.join("\n"));
+  //   process.exit(1);
+  // } else {
+  //   await write(
+  //     `✅ Checked ${pagesMap.size} pages and found no invalid or broken internal links`
+  //   );
+  // }
 };
 
 run();
