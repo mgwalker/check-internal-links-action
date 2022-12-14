@@ -6,7 +6,7 @@ jobs:
   bob:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout
-      - uses: mgwalker/check-internal-links-action
+      - uses: actions/checkout@v3
+      - uses: mgwalker/check-internal-links-action@e12dc33
         with:
           - path: pages
