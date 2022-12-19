@@ -15,5 +15,6 @@ runs:
         ruby-version: 2.7
         bundler-cache: true
     - run: bundle install htmlproofer
+      shell: bash
     - run: ${GITHUB_ACTION_PATH}/htmlproofer.sh "${{ inputs.path }}"
       shell: bash
