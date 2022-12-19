@@ -1,15 +1,19 @@
-name: Check internal links
+name: htmlproofer
 description: |
-  Scans a collection of HTML files looking for links to other locations within
-  the same collection (e.g., relative links). For each link, it verifies that
-  the destination page exists, and if the link includes a hashtag, it also
-  verifies that the target exists on the destination page.
+  Runs htmlproofer on some HTML files.
 inputs:
   path:
     description: |
       Path to the directory containing your HTML files. This directory will be
       scanned recursively.
-    required: true
+    default: "."
 runs:
-  using: 'node16'
-  main: 'check-links.js'
+  using: 'composite'
+  steps:
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+    - run: bundle install htmlproofer
+    - run: ${GITHUB_ACTION_PATH}/htmlproofer.sh "${{ inputs.path }}"
+      shell: bash

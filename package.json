@@ -1,8 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "@actions/core": "^1.10.0",
-    "cheerio": "^1.0.0-rc.12"
-  },
-  "prettier": {}
-}

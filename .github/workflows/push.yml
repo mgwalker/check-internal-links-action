@@ -10,3 +10,6 @@ jobs:
       - uses: mgwalker/check-internal-links-action@dbe5e45f1cc77314121a0a5f12a1353e7defcc4c
         with:
           path: pages
+          baseUrl: https://testing.com
+          ignore:
+            - /admin/**/*
