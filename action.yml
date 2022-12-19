@@ -12,8 +12,8 @@ runs:
   steps:
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
-    - run: bundle install htmlproofer
+        ruby-version: 3
+    - run: gem install html-proofer -v "~> 5"
       shell: bash
     - run: ${GITHUB_ACTION_PATH}/htmlproofer.sh "${{ inputs.path }}"
       shell: bash

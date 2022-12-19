@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-bundle exec htmlproofer $1 htmlproofer --disable-external=true --allow-empty-href=true
+htmlproofer $1 --disable-external=true --allow-empty-href=true
