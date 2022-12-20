@@ -10,6 +10,7 @@ jobs:
       - uses: mgwalker/check-internal-links-action@ea27cf8fff2fcfbf330019d1ecfe7c705ae377fd
         with:
           path: pages
+          args: --disable-external --allow-missing-href
           # baseUrl: https://testing.com
           # ignore:
           #   - /admin/**/*
