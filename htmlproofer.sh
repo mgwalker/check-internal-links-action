@@ -14,7 +14,7 @@ while read LINE; do
   if [[ "$LINE" =~ ^\*[[:space:]]At[[:space:]]([^:]*) ]]; then
     PAGE="${BASH_REMATCH[1]}"
   elif [[ ! "$LINE" =~ ^$ ]]; then
-    echo "::error title=$LINE::in $PAGE"
+    echo "::error title=\"$LINE\"::in $PAGE"
   fi
 done < errors.txt
 
