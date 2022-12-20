@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: mgwalker/check-internal-links-action@3f0352a7e80e7fad78ea32cc14d84c16ddbc26c0
+      - uses: mgwalker/check-internal-links-action@7b8d2b36fb6f246f3cb5ef339e6f6928cc471540
         with:
           path: pages
           # baseUrl: https://testing.com
