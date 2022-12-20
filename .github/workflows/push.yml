@@ -1,9 +1,9 @@
-name: hi
+name: htmlproofer
 
 on: [push]
 
 jobs:
-  bob:
+  htmlproofer:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

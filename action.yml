@@ -7,6 +7,10 @@ inputs:
       Path to the directory containing your HTML files. This directory will be
       scanned recursively.
     default: "."
+  args:
+    description: |
+      Arguments and/or flags to pass into htmlproofer.
+    default: "--disable-external"
 runs:
   using: 'composite'
   steps:
@@ -15,5 +19,5 @@ runs:
         ruby-version: 3
     - run: gem install html-proofer -v "~> 5"
       shell: bash
-    - run: ${GITHUB_ACTION_PATH}/htmlproofer.sh "${{ inputs.path }}"
+    - run: ${GITHUB_ACTION_PATH}/htmlproofer.sh "${{ inputs.path }}" "${{ inputs.args }}"
       shell: bash

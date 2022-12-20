@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-htmlproofer $1 --disable-external --allow-missing-href 2>raw-errors.txt > /dev/null
+ARGS=($2)
+
+htmlproofer $1 "${ARGS[@]}" 2>raw-errors.txt > /dev/null
 CODE=$?
 
 if [ "$CODE" -eq "0" ]; then
